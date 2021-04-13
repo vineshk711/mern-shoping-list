@@ -4,10 +4,19 @@ const Item = require("../../models/Item");
 
 router.get("/", (req, res) => {
   Item.find()
-    .sort({ date: -1 })
+    // .sort({ date: -1 })
     .then((item) => {
       res.json(item);
     });
+});
+
+router.post("/", (req, res) => {
+  const newItem = new Item({
+    name: req.body.name
+  });
+  newItem.save((item) => {
+    res.json(item);
+  });
 });
 
 module.exports = router;
