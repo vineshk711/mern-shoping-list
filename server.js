@@ -12,10 +12,10 @@ const url = require("./config/keys").mongoURI;
 mongoose
   .connect(url)
   .then(() => {
-    console.log("Database Connected...");
+    console.log("DATABASE CONNECTED...");
   })
   .catch((err) => {
-    console.log("Error connection to DB");
+    console.log("ERROR IN CONNECTION TO DB");
   });
 
 // Routes
@@ -23,5 +23,5 @@ app.use("/api/items", items);
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
-  console.log(`Server is running on port : ${port}`);
+  console.log(`SERVER IS RUNNING ON PORT ${port}`);
 });
