@@ -1,0 +1,27 @@
+{
+  "name": "shopingList",
+  "version": "1.0.0",
+  "description": "Shoping List app usiing MERN stack",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "colorizer": "2.0.2",
+    "concurrently": "^6.0.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3",
+    "prettier": "2.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "www.github.com/vineshk711/mern-shopinglist/"
+  },
+  "author": "Vinesh",
+  "license": "ISC"
+}
