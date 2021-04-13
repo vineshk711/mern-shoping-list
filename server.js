@@ -3,15 +3,16 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
 const app = express();
+app.use(bodyParser.json());
 
-const url = "";
-
+// DB connection
+const url = require("./config/keys").mongoURI;
 mongoose
   .connect(url)
-  .catch(() => {
+  .then(() => {
     console.log("Database Connected...");
   })
-  .then(() => {
+  .catch((err) => {
     console.log("Error connection to DB");
   });
 

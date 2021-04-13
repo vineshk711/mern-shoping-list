@@ -2,7 +2,7 @@
   "name": "shopingList",
   "version": "1.0.0",
   "description": "Shoping List app usiing MERN stack",
-  "main": "src/server.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js"
   },
