@@ -4,8 +4,7 @@
   "description": "Shoping List app usiing MERN stack",
   "main": "src/server.js",
   "scripts": {
-    "start": "npm src/server.js",
-    "server": "nodemon src/server.js"
+    "start": "nodemon server.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
