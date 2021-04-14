@@ -28,15 +28,19 @@ router.post("/", (req, res) => {
 
 // Delete an item
 router.delete("/:id", (req, res) => {
-  // const uid = req.params.id.toString()
-  Item.remove(req.params.id, (err, item) => {
-    if (err) {
-      return res.status(404).json({
-        error: "Unable to delete item"
-      });
-    }
-    res.json(item);
-  });
+  Item.findById(req.params.id)
+    // , (err, item) => {
+    //   if (!err) {
+    //     item.remove((err, item) => {
+    //       if (!err) {
+    //         res.json({
+    //           msg: "item deleted"
+    //         });
+    //       }
+    //     });
+    //   }
+    // });
+    .then((item) => item.remove().then(() => res.json({ msg: "item deleted" })))
+    .catch((err) => res.status(404).json({ msg: "unable to delete" }));
 });
-
 module.exports = router;
