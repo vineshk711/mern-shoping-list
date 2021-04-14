@@ -12,7 +12,9 @@
     "concurrently": "^6.0.2",
     "express": "^4.17.1",
     "mongoose": "^5.12.3",
-    "prettier": "2.2.1"
+    "npm": "^7.9.0",
+    "prettier": "2.2.1",
+    "react": "^17.0.2"
   },
   "devDependencies": {
     "nodemon": "1.18.4"
