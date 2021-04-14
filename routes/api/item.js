@@ -28,19 +28,25 @@ router.post("/", (req, res) => {
 
 // Delete an item
 router.delete("/:id", (req, res) => {
-  Item.findById(req.params.id)
-    // , (err, item) => {
-    //   if (!err) {
-    //     item.remove((err, item) => {
-    //       if (!err) {
-    //         res.json({
-    //           msg: "item deleted"
-    //         });
-    //       }
-    //     });
-    //   }
-    // });
-    .then((item) => item.remove().then(() => res.json({ msg: "item deleted" })))
-    .catch((err) => res.status(404).json({ msg: "unable to delete" }));
+  Item.findById(req.params.id, (err, item) => {
+    if (err) {
+      return res.status(404).json({
+        error: "Something went wrong"
+      });
+    }
+    if (!item) {
+      return res.status(404).json({
+        error: "Item not present in DB"
+      });
+    }
+    item.remove(() => {
+      res.json({
+        msg: "Item deleted"
+      });
+    });
+  });
 });
+// .then((item) => item.remove().then(() => res.json({ msg: "item deleted" })))
+// .catch((err) => res.status(404).json({ msg: "unable to delete" }));
+// });
 module.exports = router;
